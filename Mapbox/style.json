@@ -27,7 +27,7 @@
     "pitch": 0,
     "sources": {
         "composite": {
-            "url": "mapbox://jacobhaap.byysutwc,mapbox.mapbox-streets-v8,mapbox.mapbox-terrain-v2",
+            "url": "mapbox://mapbox.mapbox-streets-v8,jacobhaap.c30z90vg,mapbox.mapbox-terrain-v2",
             "type": "vector"
         }
     },
@@ -3443,12 +3443,12 @@
             }
         },
         {
-            "id": "hack clubs",
+            "id": "hack club chapters",
             "type": "symbol",
             "source": "composite",
-            "source-layer": "All_Hack_Clubs",
+            "source-layer": "Hack_Club_Chapters",
             "layout": {
-                "text-line-height": 1,
+                "text-field": ["to-string", ["get", "Name"]],
                 "text-size": [
                     "interpolate",
                     ["cubic-bezier", 0.2, 0, 0.9, 1],
@@ -3490,7 +3490,8 @@
                         10
                     ]
                 ],
-                "icon-offset": [0, 0],
+                "text-line-height": 1,
+                "text-max-width": 7,
                 "text-justify": [
                     "step",
                     ["zoom"],
@@ -3505,6 +3506,13 @@
                         "right",
                         "center"
                     ],
+                    8,
+                    "center"
+                ],
+                "text-anchor": [
+                    "step",
+                    ["zoom"],
+                    ["get", "text_anchor"],
                     8,
                     "center"
                 ],
@@ -3560,29 +3568,19 @@
                     ],
                     8,
                     ["literal", [0, 0]]
-                ],
-                "text-anchor": [
-                    "step",
-                    ["zoom"],
-                    ["get", "text_anchor"],
-                    8,
-                    "center"
-                ],
-                "text-field": ["to-string", ["get", "Name"]],
-                "text-max-width": 7
+                ]
             },
             "paint": {
+                "text-color": "#e42d42",
                 "text-halo-color": "hsla(0, 0%, 10%, 0.75)",
                 "text-halo-width": 2,
-                "text-halo-blur": 1,
-                "text-color": "#e42d42",
-                "text-opacity": 1
+                "text-halo-blur": 1
             }
         }
     ],
     "created": "2019-10-19T03:27:43.295Z",
     "id": "ck1x04lo999yz1cnzriaro4mk",
-    "modified": "2019-10-19T15:24:06.338Z",
+    "modified": "2019-10-24T13:31:24.320Z",
     "owner": "jacobhaap",
     "visibility": "private",
     "draft": false
